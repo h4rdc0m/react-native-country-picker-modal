@@ -217,14 +217,18 @@ var CountryPicker = function (_React$Component) {
       if (this.state.cca2) {
         btnContent = _reactNative2.default.createElement(
           _reactNative.View,
-          { style: styles.touchFlag },
-          _reactNative2.default.createElement(_reactNative.Image, {
-            style: styles.imgStyle,
-            source: { uri: _CountryFlags2.default[this.state.cca2] } }),
+          null,
           _reactNative2.default.createElement(
-            _reactNative.Text,
-            null,
-            'Country selected'
+            _reactNative.View,
+            { style: styles.touchFlag },
+            _reactNative2.default.createElement(_reactNative.Image, {
+              style: styles.imgStyle,
+              source: { uri: _CountryFlags2.default[this.state.cca2] } }),
+            _reactNative2.default.createElement(
+              _reactNative.Text,
+              null,
+              this.props.name
+            )
           )
         );
       }
