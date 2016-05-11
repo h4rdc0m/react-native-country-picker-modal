@@ -149,16 +149,27 @@ class CountryPicker extends React.Component {
   }
 
   render() {
+    let btnContent = (
+      <View style={styles.touchFlag}>
+        <Text>{this.props.clickMessage || 'Click here to select your country'}</Text>
+      </View>
+    )
+    if (this.state.cca2) {
+      btnContent = (
+        <View style={styles.touchFlag}>
+          <Image
+            style={styles.imgStyle}
+            source={{uri: CountryFlags[this.state.cca2]}}/>
+          <Text>{this._getCountryName(this.state.cca2)}</Text>
+        </View>
+      );
+    }
     return (
       <View>
         <TouchableOpacity
           onPress={()=> this.setState({modalVisible: true})}
           activeOpacity={0.7}>
-          <View style={styles.touchFlag}>
-            <Image
-              style={styles.imgStyle}
-              source={{uri: CountryFlags[this.state.cca2]}}/>
-          </View>
+          {btnContent}
         </TouchableOpacity>
         <Modal visible={this.state.modalVisible}>
           {/*<ScrollView
