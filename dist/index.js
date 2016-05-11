@@ -224,7 +224,7 @@ var CountryPicker = function (_React$Component) {
           _reactNative2.default.createElement(
             _reactNative.Text,
             null,
-            this._getCountryName(this.state.cca2)
+            this._getCountryName(this.state.currentCountry)
           )
         );
       }
