@@ -31,7 +31,8 @@ class CountryPicker extends React.Component {
       cca2: props.cca2,
       currentCountry: this._getCountry(props.cca2),
       modalVisible: false,
-      countries: ds.cloneWithRows(this._orderCountryList())
+      countries: ds.cloneWithRows(this._orderCountryList()),
+      selectedCountry: null
     };
     this.letters = _.range('A'.charCodeAt(0), 'Z'.charCodeAt(0) + 1).map(n => String.fromCharCode(n).substr(0));
     this.lettersPositions = {};
@@ -66,7 +67,8 @@ class CountryPicker extends React.Component {
 
     this.setState({
       modalVisible: false,
-      cca2: country.cca2
+      cca2: country.cca2,
+      selectedCountry: this._getCountryName(country)
     });
 
     if (this.props.onChange) {
@@ -161,7 +163,7 @@ class CountryPicker extends React.Component {
             <Image
               style={styles.imgStyle}
               source={{uri: CountryFlags[this.state.cca2]}}/>
-            <Text>{this.state.currentCountry.name}</Text>
+            <Text>{this.state.selectedCountry}</Text>
           </View>
         </View>
       );
@@ -174,23 +176,18 @@ class CountryPicker extends React.Component {
           {btnContent}
         </TouchableOpacity>
         <Modal visible={this.state.modalVisible}>
-          {/*<ScrollView
-            ref={(scrollView) => { this._scrollView = scrollView; }}
-            contentContainerStyle={styles.contentContainer}
-            showsVerticalScrollIndicator={false}
-            bounces={false}
-            scrollsToTop={true}>
-            {_.map(this.state.countries, (country, index) => this._renderCountry(country, index))}
-          </ScrollView>*/}
+          
           <ListView
             contentContainerStyle={styles.contentContainer}
             ref={(scrollView) => { this._scrollView = scrollView; }}
             dataSource={this.state.countries}
             renderRow={(country) => this._renderCountry(country)}
           />
-          <View style={styles.letters}>
-            {_.map(this.letters, (letter, index) => this._renderLetters(letter, index))}
-          </View>
+        {
+          // <View style={styles.letters}>
+          //   {_.map(this.letters, (letter, index) => this._renderLetters(letter, index))}
+          // </View>
+        }
         </Modal>
       </View>
     );

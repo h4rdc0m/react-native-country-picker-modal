@@ -50,7 +50,8 @@ var CountryPicker = function (_React$Component) {
       cca2: props.cca2,
       currentCountry: _this._getCountry(props.cca2),
       modalVisible: false,
-      countries: ds.cloneWithRows(_this._orderCountryList())
+      countries: ds.cloneWithRows(_this._orderCountryList()),
+      selectedCountry: null
     };
     _this.letters = _lodash2.default.range('A'.charCodeAt(0), 'Z'.charCodeAt(0) + 1).map(function (n) {
       return String.fromCharCode(n).substr(0);
@@ -95,7 +96,8 @@ var CountryPicker = function (_React$Component) {
 
       this.setState({
         modalVisible: false,
-        cca2: country.cca2
+        cca2: country.cca2,
+        selectedCountry: this._getCountryName(country)
       });
 
       if (this.props.onChange) {
@@ -227,7 +229,7 @@ var CountryPicker = function (_React$Component) {
             _reactNative2.default.createElement(
               _reactNative.Text,
               null,
-              this.state.currentCountry.name
+              this.state.selectedCountry
             )
           )
         );
@@ -256,14 +258,7 @@ var CountryPicker = function (_React$Component) {
             renderRow: function renderRow(country) {
               return _this5._renderCountry(country);
             }
-          }),
-          _reactNative2.default.createElement(
-            _reactNative.View,
-            { style: styles.letters },
-            _lodash2.default.map(this.letters, function (letter, index) {
-              return _this5._renderLetters(letter, index);
-            })
-          )
+          })
         )
       );
     }
