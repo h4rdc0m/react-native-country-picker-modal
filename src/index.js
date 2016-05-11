@@ -150,7 +150,7 @@ class CountryPicker extends React.Component {
 
   render() {
     let btnContent = (
-      <View style={styles.touchFlag}>
+      <View>
         <Text>{this.props.clickMessage || 'Click here to select your country'}</Text>
       </View>
     )
@@ -160,7 +160,7 @@ class CountryPicker extends React.Component {
           <Image
             style={styles.imgStyle}
             source={{uri: CountryFlags[this.state.cca2]}}/>
-          <Text>{this._getCountryName(this.state.currentCountry)}</Text>
+          <Text>Country selected</Text>
         </View>
       );
     }
