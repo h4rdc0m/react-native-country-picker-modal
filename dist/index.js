@@ -219,7 +219,7 @@ var CountryPicker = function (_React$Component) {
       if (this.state.cca2) {
         btnContent = _reactNative2.default.createElement(
           _reactNative.View,
-          null,
+          { style: { flex: 1, flexDirection: 'row' } },
           _reactNative2.default.createElement(
             _reactNative.View,
             { style: styles.touchFlag },
@@ -229,7 +229,7 @@ var CountryPicker = function (_React$Component) {
           ),
           _reactNative2.default.createElement(
             _reactNative.Text,
-            null,
+            { style: { marginLeft: _Ratio2.default.getWidthPercent(0.5) } },
             this.state.selectedCountry
           )
         );
