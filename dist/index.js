@@ -61,6 +61,15 @@ var CountryPicker = function (_React$Component) {
   }
 
   _createClass(CountryPicker, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.state.currentCountry) {
+        this.setState({
+          selectedCountry: this._getCountryName(this.state.currentCountry)
+        });
+      }
+    }
+  }, {
     key: '_getCountry',
     value: function _getCountry(cca2) {
       return _lodash2.default.find(_worldCountries2.default, {

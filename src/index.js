@@ -32,7 +32,7 @@ class CountryPicker extends React.Component {
       currentCountry: this._getCountry(props.cca2),
       modalVisible: false,
       countries: ds.cloneWithRows(this._orderCountryList()),
-      selectedCountry: null;
+      selectedCountry: null
     };
     this.letters = _.range('A'.charCodeAt(0), 'Z'.charCodeAt(0) + 1).map(n => String.fromCharCode(n).substr(0));
     this.lettersPositions = {};
