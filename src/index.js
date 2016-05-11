@@ -163,8 +163,8 @@ class CountryPicker extends React.Component {
             <Image
               style={styles.imgStyle}
               source={{uri: CountryFlags[this.state.cca2]}}/>
-            <Text>{this.state.selectedCountry}</Text>
           </View>
+          <Text>{this.state.selectedCountry}</Text>
         </View>
       );
     }
@@ -176,7 +176,7 @@ class CountryPicker extends React.Component {
           {btnContent}
         </TouchableOpacity>
         <Modal visible={this.state.modalVisible}>
-          
+
           <ListView
             contentContainerStyle={styles.contentContainer}
             ref={(scrollView) => { this._scrollView = scrollView; }}

@@ -225,12 +225,12 @@ var CountryPicker = function (_React$Component) {
             { style: styles.touchFlag },
             _reactNative2.default.createElement(_reactNative.Image, {
               style: styles.imgStyle,
-              source: { uri: _CountryFlags2.default[this.state.cca2] } }),
-            _reactNative2.default.createElement(
-              _reactNative.Text,
-              null,
-              this.state.selectedCountry
-            )
+              source: { uri: _CountryFlags2.default[this.state.cca2] } })
+          ),
+          _reactNative2.default.createElement(
+            _reactNative.Text,
+            null,
+            this.state.selectedCountry
           )
         );
       }
