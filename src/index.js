@@ -161,7 +161,7 @@ class CountryPicker extends React.Component {
             <Image
               style={styles.imgStyle}
               source={{uri: CountryFlags[this.state.cca2]}}/>
-            <Text>{this.props.name}</Text>
+            <Text>{this.state.currentCountry.name}</Text>
           </View>
         </View>
       );
