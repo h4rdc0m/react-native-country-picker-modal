@@ -207,7 +207,7 @@ var CountryPicker = function (_React$Component) {
 
       var btnContent = _reactNative2.default.createElement(
         _reactNative.View,
-        { style: styles.touchFlag },
+        null,
         _reactNative2.default.createElement(
           _reactNative.Text,
           null,
@@ -224,7 +224,7 @@ var CountryPicker = function (_React$Component) {
           _reactNative2.default.createElement(
             _reactNative.Text,
             null,
-            this._getCountryName(this.state.currentCountry)
+            'Country selected'
           )
         );
       }
