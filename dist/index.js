@@ -205,6 +205,29 @@ var CountryPicker = function (_React$Component) {
     value: function render() {
       var _this5 = this;
 
+      var btnContent = _reactNative2.default.createElement(
+        _reactNative.View,
+        { style: styles.touchFlag },
+        _reactNative2.default.createElement(
+          _reactNative.Text,
+          null,
+          this.props.clickMessage || 'Click here to select your country'
+        )
+      );
+      if (this.state.cca2) {
+        btnContent = _reactNative2.default.createElement(
+          _reactNative.View,
+          { style: styles.touchFlag },
+          _reactNative2.default.createElement(_reactNative.Image, {
+            style: styles.imgStyle,
+            source: { uri: _CountryFlags2.default[this.state.cca2] } }),
+          _reactNative2.default.createElement(
+            _reactNative.Text,
+            null,
+            this._getCountryName(this.state.cca2)
+          )
+        );
+      }
       return _reactNative2.default.createElement(
         _reactNative.View,
         null,
@@ -215,13 +238,7 @@ var CountryPicker = function (_React$Component) {
               return _this5.setState({ modalVisible: true });
             },
             activeOpacity: 0.7 },
-          _reactNative2.default.createElement(
-            _reactNative.View,
-            { style: styles.touchFlag },
-            _reactNative2.default.createElement(_reactNative.Image, {
-              style: styles.imgStyle,
-              source: { uri: _CountryFlags2.default[this.state.cca2] } })
-          )
+          btnContent
         ),
         _reactNative2.default.createElement(
           _reactNative.Modal,
