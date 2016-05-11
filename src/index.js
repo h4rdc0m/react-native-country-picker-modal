@@ -156,11 +156,13 @@ class CountryPicker extends React.Component {
     )
     if (this.state.cca2) {
       btnContent = (
-        <View style={styles.touchFlag}>
-          <Image
-            style={styles.imgStyle}
-            source={{uri: CountryFlags[this.state.cca2]}}/>
-          <Text>Country selected</Text>
+        <View>
+          <View style={styles.touchFlag}>
+            <Image
+              style={styles.imgStyle}
+              source={{uri: CountryFlags[this.state.cca2]}}/>
+            <Text>{this.props.name}</Text>
+          </View>
         </View>
       );
     }
