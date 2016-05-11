@@ -164,7 +164,7 @@ class CountryPicker extends React.Component {
               style={styles.imgStyle}
               source={{uri: CountryFlags[this.state.cca2]}}/>
           </View>
-          <Text style={{marginLeft: Ratio.getWidthPercent(0.5)}}>{this.state.selectedCountry}</Text>
+          <Text style={{marginLeft: Ratio.getWidthPercent(5)}}>{this.state.selectedCountry}</Text>
         </View>
       );
     }

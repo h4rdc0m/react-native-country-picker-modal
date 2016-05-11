@@ -229,7 +229,7 @@ var CountryPicker = function (_React$Component) {
           ),
           _reactNative2.default.createElement(
             _reactNative.Text,
-            { style: { marginLeft: _Ratio2.default.getWidthPercent(0.5) } },
+            { style: { marginLeft: _Ratio2.default.getWidthPercent(5) } },
             this.state.selectedCountry
           )
         );
