@@ -153,7 +153,7 @@ class CountryPicker extends React.Component {
   render() {
     let btnContent = (
       <View>
-        <Text>{this.props.clickMessage || 'Click here to select your country'}</Text>
+        <Text style={this.props.labelStyle || {}}>{this.props.clickMessage || 'Click here to select your country'}</Text>
       </View>
     )
     if (this.state.cca2) {

@@ -212,7 +212,7 @@ var CountryPicker = function (_React$Component) {
         null,
         _reactNative2.default.createElement(
           _reactNative.Text,
-          null,
+          { style: this.props.labelStyle || {} },
           this.props.clickMessage || 'Click here to select your country'
         )
       );
